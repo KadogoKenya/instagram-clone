@@ -68,17 +68,3 @@ def likePost(request,image_id):
        is_liked = True
 
    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-#############################comment attempt 4###################
-# @login_required(login_url='/accounts/login/')
-# def comment_on(request, post_id):
-#     commentform = CommentForm()
-#     post = get_object_or_404(Post, pk=post_id)
-#     if request.method == 'POST':
-#         form = CommentForm(request.POST)
-#         if form.is_valid():
-#             comment = form.save(commit=False)
-#             comment.user = request.user.profile
-#             comment.photo = post
-#             comment.save()
-#     return render(request, 'post.html', {'form':commentform}, locals())
