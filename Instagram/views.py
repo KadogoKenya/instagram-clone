@@ -45,13 +45,11 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     success_url = '/instagram'
     
 
-
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.user:
             return True
         return False
-
 
 def about(request):
     return render (request, 'about.html')
