@@ -69,9 +69,6 @@ def likePost(request,image_id):
 
    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-
-
-
 #############################comment attempt 4###################
 # @login_required(login_url='/accounts/login/')
 # def comment_on(request, post_id):
