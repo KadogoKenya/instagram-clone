@@ -54,10 +54,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render (request, 'about.html')
 
-    #################################################################################
-    
-
-
 @login_required(login_url='/login/')
 def likePost(request,image_id):
 
