@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <nav class="navbar nav-inverse">
+    <nav class="navbar navbar-inverse navbar-dark bg-secondary" style="margin-top: 20; border:border border-secondary;">
             <!-- My Insta Icons on the left -->
             <span class="navbar-left">
                 <a href="{% url 'insta-home' %}" style="color: black"> 
@@ -26,16 +26,13 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search User" name="">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit">
-
+                            <!-- <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-search">Search</i></button> -->
                             </button>
                         </div>
                     </div>
                 </form>
             </span>
-            <!-- search form end -->
-
-            <!-- insta icons to the right -->
+   
             
             <span class="pull-right">
                 {% if user.is_authenticated %}
