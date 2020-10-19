@@ -5,17 +5,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 
-
-
 class PostListView(ListView):
     model = Post
-    template_name = 'index.html'  #<app>/<model>_<viewtype>.html
+    template_name = 'index.html' 
     context_object_name = 'posts'
     ordering = ['-date_posted']
-
-
-class PostDetailView(DetailView):
-    model = Post
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
@@ -24,6 +18,10 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+class PostDetailView(DetailView):
+    model = Post
+
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['caption', 'image']
