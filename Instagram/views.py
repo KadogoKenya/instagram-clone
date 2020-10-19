@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Post
 from django.views.generic import  ListView,DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -12,9 +12,16 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
-    posts = Post.get_all_images()
+    # def index(request):
 
-    
+    #     posts = Post.get_all_images()
+    #     print(posts)
+    #     context={
+    #         'posts':posts,
+    #     }
+
+    #     return redirect(request,'index.html', context)
+
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post

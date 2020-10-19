@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -79,10 +80,10 @@ WSGI_APPLICATION = 'insta.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'instagramclone',
         'USER':'kate',
-    'PASSWORD':'Kanini12',
+        'PASSWORD':'Kanini12',
     }
 }
 
@@ -125,5 +126,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'media/'
+
 # LOGIN_REDIRECT_URL='index'
 LOGIN_URL="login"
+
+
