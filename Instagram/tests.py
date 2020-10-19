@@ -12,9 +12,6 @@ class TestPost(TestCase):
         self.user.save()
         self.post_test = Post(id=1,caption='no human is limited', image='default.png', user=self.user)
 
-        
-
-
     def test_instance(self):
         self.assertTrue(isinstance(self.post_test, Post))
 
@@ -29,15 +26,3 @@ class TestPost(TestCase):
         after = Profile.objects.all()
         self.assertTrue(len(before) == len(after))
 
-
-
-
-
-
-
-
-    #    self.profile_test = Profile(id=2, user=self.user, bio='no human is limited', image='default.jpg' )
-        # self.profile_test.save()
-
-
-        # likes = post_test.likes.set([request.likes])
