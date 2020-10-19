@@ -40,7 +40,7 @@ def display_profile(request):
     
     u_form = UserUpdateForm(instance=request.user)
     p_form = ProfileUpdateForm(instance=request.user.profile)
-    posts = Post.objects.filter(user_profile=request.user)
+    posts = Post.objects.filter(user_profile=request.user.profile)
 
     context = {
         'u_form': u_form,
