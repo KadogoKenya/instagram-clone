@@ -11,8 +11,6 @@
             <p class="text-secondary">{{ user.bio }}</p>
         </div>
     </div>
-
-
     <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             
@@ -26,5 +24,4 @@
             </div>
         </form>
 </div>
-
 {% endblock %}
