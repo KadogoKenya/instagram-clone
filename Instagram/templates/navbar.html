@@ -10,16 +10,13 @@
 
 <body>
     <nav class="navbar navbar-inverse navbar-dark bg-secondary" style="margin-top: 20; border:border border-secondary;">
-            <!-- My Insta Icons on the left -->
+          
             <span class="navbar-left">
                 <a href="{% url 'insta-home' %}" style="color: black"> 
-                    <i class="fab fa-instagram fa-4x "></i>
-                    <!-- <div class="vr"></div> -->
-                    <img src="{% static 'img/brand.png' %}" class="icon">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                    <img src="{% static 'img/brand.jpg' %}" class="icon">
                 </a>
             </span>
-
-            <!-- Adding a search form -->
 
             <span class="col-sm-4 col-md-4 ">
                 <form class="navbar-form" role="search" action="">
