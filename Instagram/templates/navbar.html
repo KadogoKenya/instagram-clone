@@ -33,13 +33,10 @@
             
             <span class="pull-right">
                 {% if user.is_authenticated %}
-                <i class="far fa-compass fa-4x mr-5"></i>
-                <i class="far fa-heart fa-4x mr-5"></i>
-                <!-- <i class="far fa-home" aria-hidden="true"></i>
-                <i class="far fa-search" aria-hidden="true"></i>
-                <i class="far fa-plus-square" aria-hidden="true"></i> -->
+                <i class="far fa-compass fa-4x mr-5 text-success"></i>
+                <i class="far fa-heart fa-4x mr-5 text-success"></i>
                 <a href="{% url 'display_profile' %}" class="nav-item-nav-link mr-5" style="color: black">
-                <i class="far fa-user fa-4x"></i>
+                <i class="far fa-user fa-4x text-success"></i>
             </a>
                 {% else %}
                 <a href="{% url 'login' %}" class="nav-item-nav-link">Login</a>
