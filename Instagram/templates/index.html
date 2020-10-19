@@ -4,7 +4,6 @@
 {% block content %}
 
 <div class="container">
-    <!-- profile pic -->
     <div class="row">
         <div class="col-md-12">
             {% for post in posts %}
@@ -19,7 +18,7 @@
                     <div class="card-text">
                         <a href="{% url 'post-detail' post.id %}" class="article-title">
                             <div style="background-image: url({{post.image.url}});background-size: contain;position: sticky">
-                                <img src="{{ post.image.url }}" style="visibility: hidden;" width="100%" />
+                                <img src="{{ post.image.url }}"/>
                             </div>
                         </a>
                     </div>

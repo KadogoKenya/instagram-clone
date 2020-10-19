@@ -13,6 +13,7 @@ class PostListView(ListView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
+    template_name='instagram/post_form.html'
     fields = ['caption', 'image']
 
     def form_valid(self, form):
@@ -21,6 +22,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostDetailView(DetailView):
     model = Post
+    template_name='instagram/post_detail.html'
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
