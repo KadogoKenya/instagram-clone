@@ -27,14 +27,14 @@
                     <a class='info' href="{% url 'likePost' post.pk %}">
         
                         {%if post.likes.id == user.id%}
-                        <i class="far fa-heart fa-3x"></i>
+                        <i class="far fa-heart fa-2x text-black"></i>
                         {%else%}
-                        <i class="far fa-heart fa-3x"></i>
+                        <i class="far fa-heart fa-2x text-black"></i>
                         {%endif%}
                     </a>
                     <span style="font-size:25px;">{{post.likes.count}}</span>
         
-                    <i class="far fa-comment fa-3x ml-5"></i>
+                    <i class="far fa-comment fa-3x ml-5 text-black"></i>
                     <p>{{ post.caption }}</p>
                     <p>{{ post.date_posted|timesince}} AGO</p>
                 </div>
@@ -49,7 +49,7 @@
 <div class="col-md-4">
 
         <div class="row">
-                <img class="col-md-6 rounded-circle account-img" src="{{ user.profile.image.url }}">
+                <img class="col-md-6 account-img" src="{{ user.profile.image.url }}" width="100" height="100">
                 <span class="col-md-6 mt-5  text-secondary username" >
                     <h1>{{ user.username }}</h1>
                 </span>
@@ -57,7 +57,8 @@
 
     <div  class="col-md-4 m-2" >
         <a href="{% url 'post-create' %}" style="color: black">
-            <button class="btn btn-success" type="submit">
+            <!-- <button class="btn btn-success" type="submit"> -->
+            <i class="fa fa-plus-square fa-5x text-success" aria-hidden="true"></i>
         <h3 class="">Upload</h3>
         </button>
          </a>

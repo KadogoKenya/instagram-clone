@@ -8,9 +8,9 @@ class Post(models.Model):
     caption = models.TextField()
     image = models.ImageField(upload_to = 'images/')
     date_posted = models.DateTimeField(auto_now_add=True)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name= 'likes', blank = True)
     user_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     classmethod
     def get_all_images(cls):
