@@ -6,16 +6,15 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 
 
-
-def index(request):
-
-    return render(request,'index.html')
-
 class PostListView(ListView):
     model = Post
     template_name = 'index.html' 
     context_object_name = 'posts'
     ordering = ['-date_posted']
+
+    posts = Post.get_all_images()
+
+    
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
@@ -72,16 +71,3 @@ def likePost(request,image_id):
        is_liked = True
 
    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-
-# @login_required(login_url='/accounts/login/')
-# def comment_on(request, post_id):
-#     commentform = CommentForm()
-#     post = get_object_or_404(Post, pk=post_id)
-#     if request.method == 'POST':
-#         form = CommentForm(request.POST)
-#         if form.is_valid():
-#             comment = form.save(commit=False)
-#             comment.user = request.user.profile
-#             comment.photo = post
-#             comment.save()
-#     return render(request, 'post.html', {'form':commentform}, locals())

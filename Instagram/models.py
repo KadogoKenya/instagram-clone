@@ -5,11 +5,17 @@ from django.db.models import ImageField
 
 class Post(models.Model):
     caption = models.TextField()
-    image = models.ImageField(upload_to = 'images/', default = 'default.jpg')
+    image = models.ImageField(upload_to = 'images/')
     date_posted = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name= 'likes', blank = True)
 
+    classmethod
+    def get_all_images(cls):
+        images = cls.objects.all()
+        return images
+
+        
     def total_likes(self):
        self.likes.count()
 
@@ -18,6 +24,8 @@ class Post(models.Model):
     
     def delete_post(self):
         self.delete()
+
+    
     
     def __str__(self):
         return self.caption

@@ -3,7 +3,6 @@ from .models import Post
 from users.models import Profile
 from django.contrib.auth.models import User
 
-# Create your tests here.
 
 
 class TestPost(TestCase):

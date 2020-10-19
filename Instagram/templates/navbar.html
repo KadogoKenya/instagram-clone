@@ -14,6 +14,7 @@
             <span class="navbar-left">
                 <a href="{% url 'insta-home' %}" style="color: black"> 
                     <i class="fa fa-instagram" aria-hidden="true"></i>
+
                     <img src="{% static 'img/brand.jpg' %}" class="icon">
                 </a>
             </span>
@@ -35,6 +36,9 @@
                 {% if user.is_authenticated %}
                 <i class="far fa-compass fa-4x mr-5"></i>
                 <i class="far fa-heart fa-4x mr-5"></i>
+                <!-- <i class="far fa-home" aria-hidden="true"></i>
+                <i class="far fa-search" aria-hidden="true"></i>
+                <i class="far fa-plus-square" aria-hidden="true"></i> -->
                 <a href="{% url 'display_profile' %}" class="nav-item-nav-link mr-5" style="color: black">
                 <i class="far fa-user fa-4x"></i>
             </a>
