@@ -7,9 +7,9 @@ from django.contrib.auth.models import User
 
 class TestPost(TestCase):
     def setUp(self):
-        self.user = User(username='Ndundiro')
+        self.user = User(username='kate')
         self.user.save()
-        self.post_test = Post(id=1,caption='no human is limited', image='default.png', user=self.user)
+        self.post_test = Post(id=1,caption='this is a sample test', image='default.png', user=self.user)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.post_test, Post))
