@@ -12,15 +12,15 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
 
-    # def index(request):
+def index(request):
 
-    #     posts = Post.get_all_images()
-    #     print(posts)
-    #     context={
-    #         'posts':posts,
-    #     }
+    posts = Post.get_all_images()
+    print(posts)
+    context={
+        'posts':posts,
+    }
 
-    #     return redirect(request,'index.html', context)
+    return redirect(request,'index.html', context)
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
@@ -78,3 +78,7 @@ def likePost(request,image_id):
        is_liked = True
 
    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def search(request):
+    form = SearchForm()
+    return render(request, 'index.html', {'form': form})

@@ -4,12 +4,12 @@
 {% block content %}
 <div class="container">
     <div class="col-md-6">
-        <img src="{{ object.image.url }}" class=" one">
+        <img src="{{ post.image.url }}" class=" one">
     </div>
 
     <div class="col-md-6">
         <h1>Image:{{object.caption }}</h1>
-        <h1>Uploaded by:{{object.user }}</h1>
+        <h1>Uploaded by:{{user.username }}</h1>
         <h1>Image Uploaded on: {{object.date_posted|date:"F d, Y"}}</h1>
     </div>
 </div>

@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-dark bg-secondary" style="margin-top: 20; border:border border-secondary;">
+    <nav class="navbar navbar-inverse navbar-light" style="margin-top: 20; border:border border-secondary;">
           
             <span class="navbar-left">
                 <a href="{% url 'insta-home' %}" style="color: black"> 
                     <i class="fa fa-home fa-4x text-success" aria-hidden="true" ></i>
-                    <img src="{% static 'img/brand.jpg' %}" class="icon" width="60" height="60">
+                    <img src="{% static 'img/image1.jpg' %}" class="icon" width="60" height="60">
                 </a>
             </span>
 
@@ -29,11 +29,9 @@
                     </div>
                 </form>
             </span>
-   
-            
+
             <span class="pull-right">
                 {% if user.is_authenticated %}
-                <!-- <i class="far fa-compass fa-4x mr-5 text-success"></i> -->
                 <i class="far fa-heart fa-4x mr-5 text-success"></i>
                 <a href="{% url 'display_profile' %}" class="nav-item-nav-link mr-5" style="color: black">
                 <i class="far fa-user fa-4x text-success"></i>

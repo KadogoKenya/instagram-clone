@@ -10,9 +10,6 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
-
-
-
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 
@@ -25,3 +22,6 @@ class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['image', 'bio']
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=100)

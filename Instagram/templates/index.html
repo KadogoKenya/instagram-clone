@@ -11,7 +11,7 @@
             <div class="card mb-4 mt-4 text-center" >
                 <div class="card-title">
                     <strong>
-                        <h2 class="m-3">{{ post.user }}</h2>
+                        <h2 class="m-3">{{ user.username }}</h2>
                     </strong>
                 </div>
                 <div class="card-body">
@@ -53,11 +53,10 @@
                 <span class="col-md-6 mt-5  text-secondary username" >
                     <h1>{{ user.username }}</h1>
                 </span>
-            </div>
+        </div>
 
     <div  class="col-md-4 m-2" >
         <a href="{% url 'post-create' %}" style="color: black">
-            <!-- <button class="btn btn-success" type="submit"> -->
             <i class="fa fa-plus-square fa-5x text-success" aria-hidden="true"></i>
         <h3 class="">Upload</h3>
         </button>
