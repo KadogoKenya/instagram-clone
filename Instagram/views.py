@@ -61,23 +61,24 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-def about(request):
-    return render (request, 'about.html')
+# def about(request):
+#     return render (request, 'about.html')
 
 @login_required(login_url='/login/')
 def likePost(request,image_id):
 
-   image = Post.objects.get(pk = image_id)
+    image = Post.objects.get(pk = image_id)
 
-   is_liked = False
-   if image.likes.filter(id = request.user.id).exists():
+    is_liked = False
+    if image.likes.filter(id = request.user.id).exists():
        image.likes.remove(request.user)
        is_liked = False
-   else:
+    else:
        image.likes.add(request.user)
        is_liked = True
-
-   return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    return render(request, 'insta-home')
+#    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    
 
 def search(request):
     form = SearchForm()

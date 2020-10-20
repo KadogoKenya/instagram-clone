@@ -6,7 +6,6 @@ from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView,
 urlpatterns = [
     
     url(r'^like/(\d+)',views.likePost, name="likePost"),
-    path('about/', views.about, name="insta-about"),
     path('', PostListView.as_view(), name='insta-home'),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
