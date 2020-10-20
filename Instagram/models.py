@@ -16,7 +16,6 @@ class Post(models.Model):
     def get_all_images(cls):
         images = cls.objects.all()
         return images
-
         
     def total_likes(self):
        self.likes.count()
