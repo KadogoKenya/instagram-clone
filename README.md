@@ -1,4 +1,4 @@
-# Personal Gallery
+# Instagram-Clone
 ## User upcoming Stories
 - A user can view posts. 
 - A user can like other posts,
@@ -31,6 +31,7 @@ python3 manage.py test.
 - Python3
 - Django,
 - HTML/CSS
+- JS
 
 ## Support and Contact Details
 For any information comments,suggestions,feedback or inquiries, contact me via email: catherinekanini001@gmail.com
